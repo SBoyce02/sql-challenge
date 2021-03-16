@@ -22,6 +22,10 @@ inner join employees on dept_manager.emp_no = employees.emp_no
 select first_name, last_name, sex from employees
 where first_name = 'Hercules' AND last_name like 'B%'
 -- 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+select employees.emp_no, employees.first_name, employees.last_name, departments.dept_name from employees
+inner join dept_emp on employees.emp_no = dept_emp.emp_no
+inner join departments on dept_emp.dept_no = departments.dept_no
+where departments.dept_name = 'Sales'
 
 -- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
